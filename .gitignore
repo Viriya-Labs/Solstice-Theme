@@ -1,7 +1,43 @@
+# Gradle
 .gradle/
 build/
-out/
+
+# Kotlin
+.kotlin/
+
+# IDE — IntelliJ / Android Studio
 .idea/
 *.iml
-*.zip
+out/
+
+# IntelliJ Platform Gradle Plugin (sandboxes, caches, lockfiles)
+.intellijPlatform/
+
+# Local tooling
 .local-jdk/
+
+# Built plugin / release artifacts
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Logs & JVM diagnostics
+*.log
+hs_err_pid*
+replay_pid*
+*.hprof
+
+# Local environment (never commit secrets)
+.env
+.env.local
+.env.*.local
+
+# Backup / temp
+*~
+*.swp
+*.swo
+*.orig
