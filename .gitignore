@@ -17,7 +17,7 @@ out/
 .local-jdk/
 
 # Built plugin / release artifacts
-*.zip
+**/build/distributions/*.zip
 
 # OS
 .DS_Store
