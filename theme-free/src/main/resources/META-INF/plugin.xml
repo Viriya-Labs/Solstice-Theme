@@ -1,0 +1,40 @@
+<idea-plugin>
+    <id>com.viriyalabs.solstice-themes</id>
+    <name>Solstice Themes</name>
+    <vendor>Viriya Labs</vendor>
+    <version>0.2.40</version>
+
+    <description><![CDATA[
+        <html>
+        <body>
+        <p><b>Solstice Themes</b> is a focused dark theme family for JetBrains IDEs. The free plugin includes three complete variants with coordinated editor, tabs, project tree, gutter, popup, and tool window colors.</p>
+
+        <p>If the Marketplace screenshots look different, that is intentional: Moon, Sun, and Star are separate moods, not one theme with a single swapped accent color.</p>
+        <ul>
+            <li><b>Solstice Moon</b> - a cool blue night palette with calm contrast and clean cyan highlights for long focused sessions.</li>
+            <li><b>Solstice Sun</b> - a warmer dusk palette with amber, copper, and soft brown UI tones for a cozy editor feel.</li>
+            <li><b>Solstice Star</b> - a deep violet space palette with lavender syntax, crisp tabs, and brighter celestial accents.</li>
+        </ul>
+
+        <p><b>Color previews:</b></p>
+        <p><b>Solstice Sun</b> - warm amber tabs, dark espresso editor surfaces, and copper-orange syntax accents.</p>
+        <p><img src="https://i.ibb.co/pB21P1Gk/sun-ss.png" width="760" alt="Solstice Sun theme preview"/></p>
+        <p><b>Solstice Star</b> - deep violet panels, lavender keywords, gold highlights, and a softer cosmic contrast.</p>
+        <p><img src="https://i.ibb.co/gMmzhV7g/star-ss.png" width="760" alt="Solstice Star theme preview"/></p>
+        <p><b>Solstice Moon</b> - cool blue sidebars, crisp cyan syntax, rose keywords, and a clean midnight editor tone.</p>
+        <p><img src="https://i.ibb.co/tptHs17h/moon-ss.png" width="760" alt="Solstice Moon theme preview"/></p>
+
+        <p>The free edition is theme-only: it changes the visual language of the IDE without adding background workflow features. Install <b>Solstice Pro</b> to add animated harbor details and marker tools.</p>
+        </body>
+        </html>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <themeProvider id="172f7e8b-ae4c-4213-9644-e4087aaeca10" path="/themes/MoonDark.theme.json"/>
+        <themeProvider id="661ef7d5-0b9f-4244-9054-5fefbfc6459d" path="/themes/SunDark.theme.json"/>
+        <themeProvider id="7d17e73d-3de9-4f8f-9d89-11f5a0ec6c2c" path="/themes/StarDark.theme.json"/>
+    </extensions>
+</idea-plugin>

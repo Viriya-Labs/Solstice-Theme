@@ -1,0 +1,69 @@
+<idea-plugin>
+    <id>com.viriyalabs.solstice-themes</id>
+    <name>Solstice Theme</name>
+    <vendor>Viriya Labs</vendor>
+    <version>0.2.40</version>
+
+    <description><![CDATA[
+        <html>
+        <body>
+        <p><b>Solstice Theme</b> is a three-variant dark IntelliJ theme set built around warm celestial palettes and a small layer of ambient motion.</p>
+
+        <p>Included themes:</p>
+        <ul>
+            <li>Solstice Moon</li>
+            <li>Solstice Sun</li>
+            <li>Solstice Star</li>
+        </ul>
+
+        <p><b>Color previews:</b></p>
+        <p><b>Solstice Sun</b> - warm amber tabs, dark espresso editor surfaces, and copper-orange syntax accents.</p>
+        <p><img src="https://i.ibb.co/pB21P1Gk/sun-ss.png" width="760" alt="Solstice Sun theme preview"/></p>
+        <p><b>Solstice Star</b> - deep violet panels, lavender keywords, gold highlights, and a softer cosmic contrast.</p>
+        <p><img src="https://i.ibb.co/gMmzhV7g/star-ss.png" width="760" alt="Solstice Star theme preview"/></p>
+        <p><b>Solstice Moon</b> - cool blue sidebars, crisp cyan syntax, rose keywords, and a clean midnight editor tone.</p>
+        <p><img src="https://i.ibb.co/tptHs17h/moon-ss.png" width="760" alt="Solstice Moon theme preview"/></p>
+
+        <p>Solstice also includes optional visual extras that make the IDE feel more alive:</p>
+        <ul>
+            <li>an animated status bar scene with sun, moon, stars, and water movement</li>
+            <li>badge-style gutter markers and tinted editor rows for explicit Solstice.TODO, Solstice.BUG, Solstice.IDEA, and Solstice.REVIEW comments</li>
+            <li>a JetBrains-style marker board that collects tagged lines across the project and jumps back to them</li>
+            <li>editor popup actions for quickly marking selected code as Solstice.TODO, Solstice.BUG, Solstice.IDEA, and more</li>
+        </ul>
+
+        <p><b>Pro feature previews:</b></p>
+        <p><b>Solstice Marker Board</b> - compact marker counts, priority cards, a cinematic harbor overview, gutter markers, and selected marker details in one tool window.</p>
+        <p><img src="https://i.ibb.co/MxpNGZG8/pro-tab.png" width="760" alt="Solstice Pro marker board preview"/></p>
+        <p><b>Solstice marker actions</b> - right-click selected code to quickly tag it as Solstice.BUG, Solstice.TODO, Solstice.IDEA, or Solstice.REVIEW.</p>
+        <p><img src="https://i.ibb.co/bj2CGtRW/s-pro-feature.png" width="760" alt="Solstice Pro marker actions preview"/></p>
+
+        <p>The result is a theme pack that can stay minimal when you just want the color palette, while still offering a more expressive workflow for people who like lightweight visual feedback inside the editor.</p>
+        </body>
+        </html>
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.modules.lang</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <themeProvider id="172f7e8b-ae4c-4213-9644-e4087aaeca10" path="/themes/MoonDark.theme.json"/>
+        <themeProvider id="661ef7d5-0b9f-4244-9054-5fefbfc6459d" path="/themes/SunDark.theme.json"/>
+        <themeProvider id="7d17e73d-3de9-4f8f-9d89-11f5a0ec6c2c" path="/themes/StarDark.theme.json"/>
+        <statusBarWidgetFactory id="MidnightHarborPulse" implementation="com.phonemyat.midnightharbor.HarborPulseStatusBarWidgetFactory"/>
+        <editorFactoryListener implementation="com.phonemyat.midnightharbor.HarborEditorGutterMarkerListener"/>
+        <toolWindow id="Solstice Markers" anchor="right" icon="/icons/solsticeToolWindow.svg"
+                    canCloseContents="false" doNotActivateOnStart="true"
+                    factoryClass="com.phonemyat.midnightharbor.HarborMarkersToolWindowFactory"/>
+    </extensions>
+
+    <actions>
+        <group id="Solstice.MarkerMenu" text="Solstice" popup="true">
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+            <action id="Solstice.MarkBug" class="com.phonemyat.midnightharbor.HarborMarkerActions$MarkBug" text="Mark Selection as Solstice.BUG"/>
+            <action id="Solstice.MarkTodo" class="com.phonemyat.midnightharbor.HarborMarkerActions$MarkTodo" text="Mark Selection as Solstice.TODO"/>
+            <action id="Solstice.MarkIdea" class="com.phonemyat.midnightharbor.HarborMarkerActions$MarkIdea" text="Mark Selection as Solstice.IDEA"/>
+            <action id="Solstice.MarkReview" class="com.phonemyat.midnightharbor.HarborMarkerActions$MarkReview" text="Mark Selection as Solstice.REVIEW"/>
+        </group>
+    </actions>
+</idea-plugin>
