@@ -1,27 +1,94 @@
-# Solstice
+# Solstice Theme Suite
 
-Solstice is a four-variant IntelliJ Platform theme set with Moon Light, Moon Dark, Sun Light, and Sun Dark palettes, plus the custom marker and harbor scene tooling in this plugin.
+An atmospheric JetBrains theme ecosystem built for focus-first coding sessions.
 
-## Project Layout
+Solstice ships as a two-plugin setup:
 
-- `src/main/resources/META-INF/plugin.xml` registers the plugin and theme provider.
-- `src/main/resources/themes/MidnightHarbor.theme.json` defines the IDE UI theme.
-- `src/main/resources/themes/MidnightHarbor.xml` defines the editor color scheme.
+- `theme-free` - the core Solstice visual theme family
+- `theme-pro` - premium visual workflow features layered on top
 
-## Run It
+---
 
-Open this folder in IntelliJ IDEA, import it as a Gradle project, then run the `runIde` Gradle task.
+## What You Get
 
-## Package It
+### Free: Solstice Themes
 
-Run the `buildPlugin` Gradle task. The plugin ZIP will be created under `build/distributions/`.
+- Curated dark palette variants (`Moon`, `Sun`, `Star`)
+- Tuned editor, gutter, tabs, tool window, and popup colors
+- Clean contrast for long sessions without harsh glare
 
-## Install Locally
+### Pro: Solstice Pro
 
-In IntelliJ IDEA, use:
+- Animated harbor pulse status widget
+- Marker actions (`Solstice.BUG`, `Solstice.TODO`, `Solstice.IDEA`, `Solstice.REVIEW`)
+- Solstice Markers tool window for quick marker navigation and context
 
-`Settings | Plugins | gear icon | Install Plugin from Disk...`
+---
 
-Choose the ZIP from `build/distributions/`, restart the IDE, then select one of the `Solstice` themes from:
+## Project Structure
 
-`Settings | Appearance & Behavior | Appearance | Theme`
+```text
+Solstice-Theme/
+├── src/                    # Shared code/resources (themes + pro logic)
+├── theme-free/             # Free plugin packaging module
+├── theme-pro/              # Pro plugin packaging module
+├── gradle/                 # Gradle wrapper files
+├── build.gradle.kts        # Root build configuration
+└── settings.gradle.kts     # Module wiring
+```
+
+---
+
+## Tech Stack
+
+- Kotlin + Java (IntelliJ Platform APIs)
+- Gradle Kotlin DSL
+- JetBrains IntelliJ Platform Gradle Plugin (`2.x`)
+
+---
+
+## Local Development
+
+1. Open the project in IntelliJ IDEA.
+2. Import as a Gradle project.
+3. Run one of the module tasks:
+   - `:theme-free:runIde`
+   - `:theme-pro:runIde`
+
+This launches a sandbox IDE with the selected plugin module.
+
+---
+
+## Build Plugin ZIPs
+
+Build distributables with:
+
+- `:theme-free:buildPlugin`
+- `:theme-pro:buildPlugin`
+
+Outputs are generated in each module's `build/distributions/` directory.
+
+---
+
+## Install From Disk
+
+In any JetBrains IDE:
+
+`Settings -> Plugins -> Gear Icon -> Install Plugin from Disk...`
+
+Select the generated ZIP, restart the IDE, then choose a Solstice theme from:
+
+`Settings -> Appearance & Behavior -> Appearance -> Theme`
+
+---
+
+## Notes
+
+- Build outputs and IDE sandbox artifacts are intentionally gitignored.
+- `theme-free` and `theme-pro` are source-tracked; generated distributions are not.
+
+---
+
+## License
+
+MIT - see `LICENSE`.
